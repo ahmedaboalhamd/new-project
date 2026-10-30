@@ -35,7 +35,7 @@ export default function HeroSection({ copy, language }: HeroSectionProps) {
         <div className="hero-visual">
           <div className="hero-image-frame">
             <img
-              src="/manus-storage/async-images/YNjc4Kp9atPePVmqbaOPU5/image-1.webp"
+              src={`${import.meta.env.BASE_URL}images/watch-hero.webp`}
               alt={copy.hero.visualAlt}
               fetchPriority="high"
             />

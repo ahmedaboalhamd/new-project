@@ -42,3 +42,15 @@
 
 
 تتوزع المكونات التنفيذية الفعلية على `client/src/components/landing/` (الترويسة، الافتتاحية، أقسام المنتج، الثقة والأسئلة، والتذييل)، بينما يحوي `client/src/lib/landing-copy.ts` قاموس النصوص الثنائي اللغة؛ ويجمع `client/src/pages/Home.tsx` المكونات ويدير اللغة وحوار الطلب التجريبي. يتولى `client/src/App.tsx` تشغيل ThemeProvider القابل للتبديل.
+
+
+## إعداد GitHub Pages
+
+- الحفاظ على معاينة Manus بالمسار `/`، واستخدام `base: "/new-project/"` فقط عندما يبني GitHub Actions نسخة Pages عبر `GITHUB_PAGES=true`.
+- نقل صور الساعة من مسارات Manus إلى `client/public/images/` واستدعاؤها عبر `import.meta.env.BASE_URL`؛ تطبيق المسار الأساسي نفسه على الأيقونة وسكربت الإعداد العام في HTML.
+- بناء الموقع عبر `pnpm build:static` مع ناتج `dist/public`، ثم رفع هذا المجلد كـPages artifact ونشره من GitHub Actions.
+- إبقاء المستودع خاصًا وعدم تغيير ظهوره أو تشغيل Pages حتى يوافق المستخدم صراحةً؛ حساب GitHub Free يتطلب مستودعًا عامًا لمصدر Pages.
+
+### الحالة التنفيذية الحالية
+
+حصلنا على موافقة المستخدم الصريحة على جعل المستودع `ahmedaboalhamd/new-project` عامًا؛ المستودع أصبح عامًا وتم اختيار GitHub Actions مصدرًا لـGitHub Pages. لا يُعد الإعداد مكتملًا حتى تُرفع ملفات المشروع والـworkflow إلى `main` ويظهر نجاح النشر.

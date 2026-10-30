@@ -90,7 +90,7 @@ export function DesignSection({ copy }: { copy: LandingCopy }) {
       <div className="container design-layout">
         <div className="design-visual" style={colorStyle}>
           <img
-            src="/manus-storage/async-images/YNjc4Kp9atPePVmqbaOPU5/image-2.webp"
+            src={`${import.meta.env.BASE_URL}images/watch-detail.webp`}
             alt={copy.design.visualAlt}
             loading="lazy"
           />
