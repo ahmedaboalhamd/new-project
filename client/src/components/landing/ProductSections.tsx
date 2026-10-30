@@ -82,7 +82,7 @@ export function HealthSection({ copy }: { copy: LandingCopy }) {
 }
 
 export function DesignSection({ copy }: { copy: LandingCopy }) {
-  const [selectedColor, setSelectedColor] = useState(0);
+  const [selectedColor, setSelectedColor] = useState(1);
   const colorStyle = { "--strap-color": strapColors[selectedColor] } as CSSProperties;
 
   return (
@@ -94,6 +94,8 @@ export function DesignSection({ copy }: { copy: LandingCopy }) {
             alt={copy.design.visualAlt}
             loading="lazy"
           />
+          <span className="strap-color-mask strap-color-mask-top" style={{ backgroundColor: strapColors[selectedColor] }} aria-hidden="true" />
+          <span className="strap-color-mask strap-color-mask-bottom" style={{ backgroundColor: strapColors[selectedColor] }} aria-hidden="true" />
           <div className="design-image-tint" aria-hidden="true" />
           <div className="design-image-label"><span className="label-ring" aria-hidden="true" />{copy.design.detailThree}</div>
           <div className="strap-selector">
@@ -112,7 +114,7 @@ export function DesignSection({ copy }: { copy: LandingCopy }) {
                 />
               ))}
             </div>
-            <strong>{copy.design.colors[selectedColor]}</strong>
+            <strong aria-live="polite">{copy.design.colors[selectedColor]}</strong>
           </div>
         </div>
 
